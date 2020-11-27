@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Age Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+    <h1>Enter Your Age:</h1>
+    <input type="number" id="number" placeholder="What is your age?"><br><br>
+    <button id="button" onclick="age()">Click Me!</button>
+    <h1 id="result">....</h1>
+    <h1>Until you reach 90 years old.</h1>
+    </div>
+</body>
+<script>
+    function age(){
+
+    let number = +document.getElementById('number').value;
+    let dayLimit = (365 * 90) - (number * 365);
+    let weeksLimit = (52 * 90) - (number * 52);
+    let monthsLimit = (12 * 90) - (number * 12);    
+        
+
+        if(number > 0 && number <= 90){
+            document.getElementById('result').innerHTML="You have " + dayLimit + " days, " + weeksLimit + " weeks, " + "and " + monthsLimit + " months left";
+            console.log(typeof(number))
+        }
+        else {
+            alert("Please enter age less than 90");
+           
+        }
+    }
+</script>
+</html>
